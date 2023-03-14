@@ -1,0 +1,5627 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'SF Pro Regular';
+    src: url('../fonts/SFProDisplay-Regular.woff2') format('woff2'),
+        url('../fonts/SFProDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Medium';
+    src: url('../fonts/SFProDisplay-Medium.woff2') format('woff2'),
+        url('../fonts/SFProDisplay-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Bold';
+    src: url('../fonts/SFProDisplay-Bold.woff2') format('woff2'),
+        url('../fonts/SFProDisplay-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@media all and (max-width:575px) {
+    body {
+        height: 1700px;
+    }
+    #headerBig {
+        display: none;
+    }
+
+    .headerULContainer {
+        display: none;
+    }
+
+    #headerSmall {
+        width: 100%;
+        height: 48px;
+        background-color: rgba(22, 22, 23, 0.8);
+        top: 0;
+        position:sticky;
+        z-index: 20;
+    }
+
+    .headerSmallContainer {
+        width: 100%;
+        height: 48px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .appleIcons {
+        width: 100%;
+    }
+
+    .anotherIcons {
+        width: 144px;
+        display: flex;
+    }
+
+    .headerSmIconLink {
+        display: block;
+        width: 48px;
+        height: 48px;
+    }
+
+    .headerSmIconLink:hover .headerSmIcons {
+        color: white;
+    }
+
+    .headerSmIcons {
+        color: #cbcbcb;
+        font-size: 19px;
+        line-height: 48px;
+        margin: 0 15px;
+    }
+
+    .headerSmIconLink:hover .headerSmIcons2 {
+        color: white;
+    }
+
+    .headerSmIcons2 {
+        color: #cbcbcb;
+        font-size: 16px;
+        line-height: 48px;
+        margin: 0 15px;
+    }
+
+    .menu-icon-container {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .menu-icon {
+        position: relative;
+        width: 100%;
+    }
+
+    .line1,
+    .line2 {
+        position: absolute;
+        height: 1.2px;
+        width: 15px;
+        margin: 0 15px;
+        background-color: #cbcbcb;
+        transition-property: transform, top;
+        transition-delay: 0ms, 160ms;
+        transition-duration: 200ms;
+    }
+
+    .line1 {
+        top: -4px;
+    }
+
+    .line2 {
+        top: 4px;
+    }
+
+    .line1Click {
+        height: 1.4px;
+        top: 0;
+        transform: rotateZ(45deg);
+        transition-property: top, transform;
+        transition-delay: 0ms, 160ms;
+        transition-duration: 200ms;
+    }
+
+    .line2Click {
+        height: 1.4px;
+        top: 0;
+        transform: rotateZ(-45deg);
+        transition-property: top, transform;
+        transition-delay: 0ms, 160ms;
+        transition-duration: 200ms;
+    }
+
+    .lineColor {
+        background-color: white;
+    }
+
+    .fadeOut {
+        opacity: 0;
+        transition-duration: 400ms;
+    }
+
+    .fadeIn {
+        opacity: 1;
+        transition-duration: 400ms;
+    }
+
+    .submenuH-ShopSm {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        background-color: #161617;
+        top: 0;
+        z-index: -1;
+        transform: scale(1, 0);
+        transition: all 400ms ease-in-out;
+        transform-origin: top;
+    }
+
+    .submenuH-ShopScaled {
+        transform: scale(1, 1);
+    }
+
+    .smUlContainer {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        transform-origin: top;
+        transform: scale(1, 0.8);
+        opacity: 0;
+        transition: all 0.62s ease-in-out;
+    }
+
+    .smUlContainerScaledTop {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+
+    .smUlContainerScaledLeft {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+
+    .subSmLi {
+        width: 100%;
+        height: 47px;
+    }
+
+    .subSmA {
+        display: block;
+        text-decoration: none;
+        color: #e8e8e8;
+        width: 100%;
+        height: 47px;
+        font-family: Sf Pro Bold;
+        line-height: 47px;
+        font-size: 27.5px;
+        padding-left: 47px;
+    }
+
+    .subSmA0 {
+        display: block;
+        text-decoration: none;
+        color: #e8e8e8;
+        width: 100%;
+        height: 47px;
+        font-family: Sf Pro Bold;
+        line-height: 47px;
+        font-size: 27.5px;
+        margin-left: 40px;
+    }
+
+    .chevR {
+        width: 48px;
+        height: 47px;
+        text-align: center;
+        position: absolute;
+        right: 0;
+        font-size: 18px;
+        color: #e8e8e8;
+        transform: scale(0.8, 1);
+        opacity: 0;
+        transition: all 0.32s ease-in-out;
+        transform-origin: left;
+    }
+
+    .subSmA:hover .chevR {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+
+    .chevL {
+        position: absolute;
+        z-index: 2;
+        width: 48px;
+        height: 48px;
+        line-height: 48px;
+        color: #cbcbcb;
+        font-size: 19px;
+        text-align: center;
+        opacity: 0;
+        transform: scale(0.8, 1);
+        transform-origin: right;
+        transition: all 0.32s ease-in-out;
+        cursor: pointer;
+    }
+
+    .chevLFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .chevLFadeOut {
+        opacity: 0;
+        transform-origin: left;
+    }
+
+    .hiddenCursor {
+        cursor: default;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    .smUlContainerStore {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerStoreFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerMac {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerMacFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerIpad {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerIpadFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerIphone {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerIphoneFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerWatch {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerWatchFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerAirpods {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerAirpodsFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerTv {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerTvFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerEntertainment {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerEntertainmentFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerAccessories {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerAccessoriesFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerSupport {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.8, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerSupportFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerSearch1 {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 55px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(1, 0);
+        transform-origin: top;
+        transition: all 0.62s ease-in-out;
+    }
+
+    .smUlContainerSearch1FadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerBag1 {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 50px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(1, 0);
+        transform-origin: top;
+        transition: all 0.62s ease-in-out;
+    }
+
+    .smUlContainerBag1FadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .subSmTitle {
+        color: #747478;
+        font-size: 18px;
+        font-family: Sf Pro Regular;
+        line-height: 40px;
+        height: 40px;
+        cursor: default;
+    }
+
+    .subSmLi2 {
+        width: 100%;
+        height: 35px;
+    }
+
+    .subSmLi2Title {
+        margin: 40px 0 15px;
+    }
+
+    .subSmA2 {
+        display: block;
+        text-decoration: none;
+        color: #e8e8e8;
+        height: 35px;
+        font-family: Sf Pro Medium;
+        line-height: 35px;
+        font-size: 18px;
+        margin-left: 40px;
+    }
+
+    .subSmLi2LAst {
+        margin-bottom: 92px;
+    }
+
+    .subSmLi2-2 {
+        margin-top: 20px;
+    }
+
+    .wrap {
+        word-wrap: break-word;
+        display: block;
+        text-decoration: none;
+        color: #e8e8e8;
+        width: 100%;
+        font-family: Sf Pro Bold;
+        line-height: 27px;
+        font-size: 27.5px;
+        padding-left: 48px;
+    }
+
+    .subSmLiWrap {
+        margin-top: 10px;
+    }
+
+    .searchDivSm {
+        width: 100%;
+        display: flex;
+        padding-left: 35px;
+        margin-bottom: 30px;
+    }
+
+    .PSearch {
+        padding-left: 50px;
+    }
+
+    .searchSm {
+        color: #747478;
+        font-size: 19px;
+        line-height: 41px;
+        padding: 0 13px 0 10px;
+    }
+
+    .searchBoxSm {
+        width: 90%;
+        height: 40px;
+        color: white;
+        font-size: 26px;
+        font-family: Sf Pro Bold;
+        background-color: #161617;
+    }
+
+    .searchSmUll {
+        list-style-type: none;
+    }
+
+    .arrowRight1 {
+        color: #747478;
+        font-size: 15px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .subSmA2Search {
+        display: block;
+        width: 82.5%;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #e8e8e8;
+        height: 35px;
+        font-family: Sf Pro Medium;
+        line-height: 35px;
+        font-size: 18px;
+        margin-left: 38px;
+        margin-right: 48px;
+    }
+
+    .subSmA2Search:hover {
+        background-color: #202020;
+    }
+
+    .subSmA2Search:hover .arrowRight1 {
+        color: white;
+    }
+
+    .BagDivSm {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .bagSpanSm {
+        font-size: 29px;
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        margin-left: 50px;
+    }
+
+    .bagLinkSm {
+        margin-left: 50px;
+        font-family: Sf Pro Regular;
+        font-size: 18px;
+        color: #278ceb;
+    }
+
+    .savedItemsSm {
+        font-family: Sf Pro Regular;
+        font-size: 18px;
+        color: #747478;
+        line-height: 60px;
+    }
+
+    .subSmA2Bag {
+        text-decoration: none;
+        color: #e8e8e8;
+        height: 40px;
+        font-family: Sf Pro Medium;
+        line-height: 40px;
+        font-size: 18px;
+        margin-left: 38px;
+    }
+
+    .Db {
+        display: inline;
+        padding: 10px 10px;
+    }
+
+    .shopIphoneTextBox {
+        position: relative;
+        width: 100%;
+        height: 81.76px;
+        background-color: #f5f5f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .shopIphoneText {
+        font-family: Sf Pro Regular;
+        font-size: 14px;
+        font-weight: lighter;
+        text-align: center;
+        color: #4a4a4a;
+    }
+
+    .shopIphoneTextContainer {
+        position: relative;
+        white-space: wrap;
+    }
+
+    .shopIphoneLink {
+        font-family: Sf Pro Regular;
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: lighter;
+        color: #3283d5;
+        padding-left: 5px;
+    }
+
+    .shopIphoneLink:hover {
+        text-decoration: underline;
+    }
+
+    .bi-chevron-right {
+        font-size: 10px;
+    }
+
+    .shopIphoneTextLittle {
+        font-size: 9px;
+        position: absolute;
+        left: 110px;
+    }
+
+    .secondBr {
+        display: none;
+    }
+}
+
+@media all and (min-width:576px) and (max-width:767px) {
+    #headerBig {
+        display: none;
+    }
+
+    .headerULContainer {
+        display: none;
+    }
+
+    #headerSmall {
+        width: 100%;
+        height: 48px;
+        background-color: rgba(22, 22, 23, 0.8);
+        position: sticky;
+        top: 0;
+        z-index: 20;
+    }
+
+    .headerSmallContainer {
+        width: 100%;
+        height: 48px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .appleIcons {
+        width: 100%;
+    }
+
+    .anotherIcons {
+        width: 144px;
+        display: flex;
+    }
+
+    .headerSmIconLink {
+        display: block;
+        width: 48px;
+        height: 48px;
+    }
+
+    .headerSmIconLink:hover .headerSmIcons {
+        color: white;
+    }
+
+    .headerSmIcons {
+        color: #cbcbcb;
+        font-size: 19px;
+        line-height: 48px;
+        margin: 0 15px;
+    }
+
+    .headerSmIconLink:hover .headerSmIcons2 {
+        color: white;
+    }
+
+    .headerSmIcons2 {
+        color: #cbcbcb;
+        font-size: 16px;
+        line-height: 48px;
+        margin: 0 15px;
+    }
+
+    .menu-icon-container {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .menu-icon {
+        position: relative;
+        width: 100%;
+    }
+
+    .line1,
+    .line2 {
+        position: absolute;
+        height: 1.2px;
+        width: 15px;
+        margin: 0 15px;
+        background-color: #cbcbcb;
+        transition-property: transform, top;
+        transition-delay: 0ms, 160ms;
+        transition-duration: 200ms;
+    }
+
+    .line1 {
+        top: -4px;
+    }
+
+    .line2 {
+        top: 4px;
+    }
+
+    .line1Click {
+        height: 1.4px;
+        top: 0;
+        transform: rotateZ(45deg);
+        transition-property: top, transform;
+        transition-delay: 0ms, 160ms;
+        transition-duration: 200ms;
+    }
+
+    .line2Click {
+        height: 1.4px;
+        top: 0;
+        transform: rotateZ(-45deg);
+        transition-property: top, transform;
+        transition-delay: 0ms, 160ms;
+        transition-duration: 200ms;
+    }
+
+    .lineColor {
+        background-color: white;
+    }
+
+    .fadeOut {
+        opacity: 0;
+        transition-duration: 400ms;
+    }
+
+    .fadeIn {
+        opacity: 1;
+        transition-duration: 400ms;
+    }
+
+    .submenuH-ShopSm {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        background-color: #161617;
+        top: 0;
+        z-index: -1;
+        transform: scale(1, 0);
+        transition: all 400ms ease-in-out;
+        transform-origin: top;
+    }
+
+    .submenuH-ShopScaled {
+        transform: scale(1, 1);
+    }
+
+    .smUlContainer {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        transform-origin: top;
+        transform: scale(1, 0.8);
+        opacity: 0;
+        transition: all 0.62s ease-in-out;
+    }
+
+    .smUlContainerScaledTop {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+
+    .smUlContainerScaledLeft {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+
+    .subSmLi {
+        width: 100%;
+        height: 47px;
+    }
+
+    .subSmA {
+        display: block;
+        text-decoration: none;
+        color: #e8e8e8;
+        width: 100%;
+        height: 47px;
+        font-family: Sf Pro Bold;
+        line-height: 47px;
+        font-size: 27.5px;
+        padding-left: 47px;
+    }
+
+    .subSmA0 {
+        display: block;
+        text-decoration: none;
+        color: #e8e8e8;
+        width: 100%;
+        height: 47px;
+        font-family: Sf Pro Bold;
+        line-height: 47px;
+        font-size: 27.5px;
+        margin-left: 40px;
+    }
+
+    .chevR {
+        width: 48px;
+        height: 47px;
+        text-align: center;
+        position: absolute;
+        right: 0;
+        font-size: 18px;
+        color: #e8e8e8;
+        transform: scale(0.8, 1);
+        opacity: 0;
+        transition: all 0.32s ease-in-out;
+        transform-origin: left;
+    }
+
+    .subSmA:hover .chevR {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+
+    .chevL {
+        position: absolute;
+        z-index: 2;
+        width: 48px;
+        height: 48px;
+        line-height: 48px;
+        color: #cbcbcb;
+        font-size: 19px;
+        text-align: center;
+        opacity: 0;
+        transform: scale(0.8, 1);
+        transform-origin: right;
+        transition: all 0.32s ease-in-out;
+        cursor: pointer;
+    }
+
+    .chevLFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .chevLFadeOut {
+        opacity: 0;
+        transform-origin: left;
+    }
+
+    .hiddenCursor {
+        cursor: default;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    .smUlContainerStore {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerStoreFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerMac {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerMacFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerIpad {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerIpadFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerIphone {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerIphoneFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerWatch {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerWatchFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerAirpods {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerAirpodsFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerTv {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerTvFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerEntertainment {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerEntertainmentFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerAccessories {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerAccessoriesFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerSupport {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.8, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerSupportFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerSearch1 {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 55px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(1, 0);
+        transform-origin: top;
+        transition: all 0.62s ease-in-out;
+    }
+
+    .smUlContainerSearch1FadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerBag1 {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 50px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(1, 0);
+        transform-origin: top;
+        transition: all 0.62s ease-in-out;
+    }
+
+    .smUlContainerBag1FadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .subSmTitle {
+        color: #747478;
+        font-size: 18px;
+        font-family: Sf Pro Regular;
+        line-height: 40px;
+        height: 40px;
+        cursor: default;
+    }
+
+    .subSmLi2 {
+        width: 100%;
+        height: 35px;
+    }
+
+    .subSmLi2Title {
+        margin: 40px 0 15px;
+    }
+
+    .subSmA2 {
+        display: block;
+        text-decoration: none;
+        color: #e8e8e8;
+        height: 35px;
+        font-family: Sf Pro Medium;
+        line-height: 35px;
+        font-size: 18px;
+        margin-left: 40px;
+    }
+
+    .subSmLi2LAst {
+        margin-bottom: 92px;
+    }
+
+    .subSmLi2-2 {
+        margin-top: 20px;
+    }
+
+    .wrap {
+        word-wrap: break-word;
+        display: block;
+        text-decoration: none;
+        color: #e8e8e8;
+        width: 100%;
+        font-family: Sf Pro Bold;
+        line-height: 27px;
+        font-size: 27.5px;
+        padding-left: 48px;
+    }
+
+    .subSmLiWrap {
+        margin-top: 10px;
+    }
+
+    .searchDivSm {
+        width: 100%;
+        display: flex;
+        padding-left: 35px;
+        margin-bottom: 30px;
+    }
+
+    .PSearch {
+        padding-left: 50px;
+    }
+
+    .searchSm {
+        color: #747478;
+        font-size: 19px;
+        line-height: 41px;
+        padding: 0 13px 0 10px;
+    }
+
+    .searchBoxSm {
+        width: 90%;
+        height: 40px;
+        color: white;
+        font-size: 26px;
+        font-family: Sf Pro Bold;
+        background-color: #161617;
+    }
+
+    .searchSmUll {
+        list-style-type: none;
+    }
+
+    .arrowRight1 {
+        color: #747478;
+        font-size: 15px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .subSmA2Search {
+        display: block;
+        width: 82.5%;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #e8e8e8;
+        height: 35px;
+        font-family: Sf Pro Medium;
+        line-height: 35px;
+        font-size: 18px;
+        margin-left: 38px;
+        margin-right: 48px;
+    }
+
+    .subSmA2Search:hover {
+        background-color: #202020;
+    }
+
+    .subSmA2Search:hover .arrowRight1 {
+        color: white;
+    }
+
+    .BagDivSm {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .bagSpanSm {
+        font-size: 29px;
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        margin-left: 50px;
+    }
+
+    .bagLinkSm {
+        margin-left: 50px;
+        font-family: Sf Pro Regular;
+        font-size: 18px;
+        color: #278ceb;
+    }
+
+    .savedItemsSm {
+        font-family: Sf Pro Regular;
+        font-size: 18px;
+        color: #747478;
+        line-height: 60px;
+    }
+
+    .subSmA2Bag {
+        text-decoration: none;
+        color: #e8e8e8;
+        height: 40px;
+        font-family: Sf Pro Medium;
+        line-height: 40px;
+        font-size: 18px;
+        margin-left: 38px;
+    }
+
+    .Db {
+        display: inline;
+        padding: 10px 10px;
+    }
+
+    .flexUl {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .shopIphoneTextBox {
+        position: relative;
+        width: 100%;
+        height: 61.18px;
+        background-color: #f5f5f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .shopIphoneText {
+        font-family: Sf Pro Regular;
+        font-size: 14px;
+        font-weight: lighter;
+        text-align: center;
+        color: #4a4a4a;
+    }
+
+    .shopIphoneTextContainer {
+        position: relative;
+        white-space: wrap;
+    }
+
+    .shopIphoneLink {
+        font-family: Sf Pro Regular;
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: lighter;
+        color: #3283d5;
+        padding-left: 5px;
+    }
+
+    .shopIphoneLink:hover {
+        text-decoration: underline;
+    }
+
+    .bi-chevron-right {
+        font-size: 10px;
+    }
+
+    .shopIphoneTextLittle {
+        font-size: 9px;
+        position: absolute;
+        right: 108px;
+    }
+
+    .firstBr {
+        display: none;
+    }
+}
+
+@media all and (min-width:768px) and (max-width:991px) {
+    #headerBig {
+        display: none;
+    }
+
+    .headerULContainer {
+        display: none;
+    }
+
+    #headerSmall {
+        width: 100%;
+        height: 48px;
+        background-color: rgba(22, 22, 23, 0.8);
+        position: sticky;
+        top: 0;
+        z-index: 20;
+    }
+
+    .headerSmallContainer {
+        width: 100%;
+        height: 48px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .appleIcons {
+        width: 100%;
+    }
+
+    .anotherIcons {
+        width: 144px;
+        display: flex;
+    }
+
+    .headerSmIconLink {
+        display: block;
+        width: 48px;
+        height: 48px;
+    }
+
+    .headerSmIconLink:hover .headerSmIcons {
+        color: white;
+    }
+
+    .headerSmIcons {
+        color: #cbcbcb;
+        font-size: 19px;
+        line-height: 48px;
+        margin: 0 15px;
+    }
+
+    .headerSmIconLink:hover .headerSmIcons2 {
+        color: white;
+    }
+
+    .headerSmIcons2 {
+        color: #cbcbcb;
+        font-size: 16px;
+        line-height: 48px;
+        margin: 0 15px;
+    }
+
+    .menu-icon-container {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .menu-icon {
+        position: relative;
+        width: 100%;
+    }
+
+    .line1,
+    .line2 {
+        position: absolute;
+        height: 1.2px;
+        width: 15px;
+        margin: 0 15px;
+        background-color: #cbcbcb;
+        transition-property: transform, top;
+        transition-delay: 0ms, 160ms;
+        transition-duration: 200ms;
+    }
+
+    .line1 {
+        top: -4px;
+    }
+
+    .line2 {
+        top: 4px;
+    }
+
+    .line1Click {
+        height: 1.4px;
+        top: 0;
+        transform: rotateZ(45deg);
+        transition-property: top, transform;
+        transition-delay: 0ms, 160ms;
+        transition-duration: 200ms;
+    }
+
+    .line2Click {
+        height: 1.4px;
+        top: 0;
+        transform: rotateZ(-45deg);
+        transition-property: top, transform;
+        transition-delay: 0ms, 160ms;
+        transition-duration: 200ms;
+    }
+
+    .lineColor {
+        background-color: white;
+    }
+
+    .fadeOut {
+        opacity: 0;
+        transition-duration: 400ms;
+    }
+
+    .fadeIn {
+        opacity: 1;
+        transition-duration: 400ms;
+    }
+
+    .submenuH-ShopSm {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        background-color: #161617;
+        top: 0;
+        z-index: -1;
+        transform: scale(1, 0);
+        transition: all 400ms ease-in-out;
+        transform-origin: top;
+    }
+
+    .submenuH-ShopScaled {
+        transform: scale(1, 1);
+    }
+
+    .smUlContainer {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        transform-origin: top;
+        transform: scale(1, 0.8);
+        opacity: 0;
+        transition: all 0.62s ease-in-out;
+    }
+
+    .smUlContainerScaledTop {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+
+    .smUlContainerScaledLeft {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+
+    .subSmLi {
+        width: 100%;
+        height: 47px;
+    }
+
+    .subSmA {
+        display: block;
+        text-decoration: none;
+        color: #e8e8e8;
+        width: 100%;
+        height: 47px;
+        font-family: Sf Pro Bold;
+        line-height: 47px;
+        font-size: 27.5px;
+        padding-left: 47px;
+    }
+
+    .subSmA0 {
+        display: block;
+        text-decoration: none;
+        color: #e8e8e8;
+        width: 100%;
+        height: 47px;
+        font-family: Sf Pro Bold;
+        line-height: 47px;
+        font-size: 27.5px;
+        margin-left: 40px;
+    }
+
+    .chevR {
+        width: 48px;
+        height: 47px;
+        text-align: center;
+        position: absolute;
+        right: 0;
+        font-size: 18px;
+        color: #e8e8e8;
+        transform: scale(0.8, 1);
+        opacity: 0;
+        transition: all 0.32s ease-in-out;
+        transform-origin: left;
+    }
+
+    .subSmA:hover .chevR {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+
+    .chevL {
+        position: absolute;
+        z-index: 2;
+        width: 48px;
+        height: 48px;
+        line-height: 48px;
+        color: #cbcbcb;
+        font-size: 19px;
+        text-align: center;
+        opacity: 0;
+        transform: scale(0.8, 1);
+        transform-origin: right;
+        transition: all 0.32s ease-in-out;
+        cursor: pointer;
+    }
+
+    .chevLFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .chevLFadeOut {
+        opacity: 0;
+        transform-origin: left;
+    }
+
+    .hiddenCursor {
+        cursor: default;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    .smUlContainerStore {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerStoreFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerMac {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerMacFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerIpad {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerIpadFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerIphone {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerIphoneFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerWatch {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerWatchFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerAirpods {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerAirpodsFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerTv {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerTvFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerEntertainment {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerEntertainmentFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerAccessories {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerAccessoriesFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerSupport {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 48px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.8, 0);
+        transform-origin: right top;
+        transition: all 0.72s ease-in-out;
+    }
+
+    .smUlContainerSupportFadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerSearch1 {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 55px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(1, 0);
+        transform-origin: top;
+        transition: all 0.62s ease-in-out;
+    }
+
+    .smUlContainerSearch1FadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .smUlContainerBag1 {
+        width: 100%;
+        list-style-type: none;
+        background-color: #161617;
+        position: absolute;
+        top: 50px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(1, 0);
+        transform-origin: top;
+        transition: all 0.62s ease-in-out;
+    }
+
+    .smUlContainerBag1FadeIn {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .subSmTitle {
+        color: #747478;
+        font-size: 18px;
+        font-family: Sf Pro Regular;
+        line-height: 40px;
+        height: 40px;
+        cursor: default;
+    }
+
+    .subSmLi2 {
+        width: 100%;
+        height: 35px;
+    }
+
+    .subSmLi2Title {
+        margin: 40px 0 15px;
+    }
+
+    .subSmA2 {
+        display: block;
+        text-decoration: none;
+        color: #e8e8e8;
+        height: 35px;
+        font-family: Sf Pro Medium;
+        line-height: 35px;
+        font-size: 18px;
+        margin-left: 40px;
+    }
+
+    .subSmLi2LAst {
+        margin-bottom: 92px;
+    }
+
+    .subSmLi2-2 {
+        margin-top: 20px;
+    }
+
+    .wrap {
+        word-wrap: break-word;
+        display: block;
+        text-decoration: none;
+        color: #e8e8e8;
+        width: 100%;
+        font-family: Sf Pro Bold;
+        line-height: 27px;
+        font-size: 27.5px;
+        padding-left: 48px;
+    }
+
+    .subSmLiWrap {
+        margin-top: 10px;
+    }
+
+    .searchDivSm {
+        width: 100%;
+        display: flex;
+        padding-left: 35px;
+        margin-bottom: 30px;
+    }
+
+    .PSearch {
+        padding-left: 50px;
+    }
+
+    .searchSm {
+        color: #747478;
+        font-size: 19px;
+        line-height: 41px;
+        padding: 0 13px 0 10px;
+    }
+
+    .searchBoxSm {
+        width: 90%;
+        height: 40px;
+        color: white;
+        font-size: 26px;
+        font-family: Sf Pro Bold;
+        background-color: #161617;
+    }
+
+    .searchSmUll {
+        list-style-type: none;
+    }
+
+    .arrowRight1 {
+        color: #747478;
+        font-size: 15px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .subSmA2Search {
+        display: block;
+        width: 82.5%;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #e8e8e8;
+        height: 35px;
+        font-family: Sf Pro Medium;
+        line-height: 35px;
+        font-size: 18px;
+        margin-left: 38px;
+        margin-right: 48px;
+    }
+
+    .subSmA2Search:hover {
+        background-color: #202020;
+    }
+
+    .subSmA2Search:hover .arrowRight1 {
+        color: white;
+    }
+
+    .BagDivSm {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .bagSpanSm {
+        font-size: 29px;
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        margin-left: 50px;
+    }
+
+    .bagLinkSm {
+        margin-left: 50px;
+        font-family: Sf Pro Regular;
+        font-size: 18px;
+        color: #278ceb;
+    }
+
+    .savedItemsSm {
+        font-family: Sf Pro Regular;
+        font-size: 18px;
+        color: #747478;
+        line-height: 60px;
+    }
+
+    .subSmA2Bag {
+        text-decoration: none;
+        color: #e8e8e8;
+        height: 40px;
+        font-family: Sf Pro Medium;
+        line-height: 40px;
+        font-size: 18px;
+        margin-left: 38px;
+    }
+
+    .Db {
+        display: inline;
+        padding: 10px 10px;
+    }
+
+    .flexUl {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .shopIphoneTextBox {
+        position: relative;
+        width: 100%;
+        height: 44.59px;
+        background-color: #f5f5f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .shopIphoneText {
+        font-family: Sf Pro Regular;
+        font-size: 14px;
+        font-weight: lighter;
+        text-align: center;
+        color: #4a4a4a;
+    }
+
+    .shopIphoneTextContainer {
+        position: relative;
+        white-space: wrap;
+    }
+
+    .shopIphoneLink {
+        font-family: Sf Pro Regular;
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: lighter;
+        color: #3283d5;
+        padding-left: 5px;
+    }
+
+    .shopIphoneLink:hover {
+        text-decoration: underline;
+    }
+
+    .chR {
+        font-size: 10px;
+    }
+
+    .shopIphoneTextLittle {
+        font-size: 9px;
+        position: absolute;
+        right: 90.5px;
+    }
+
+    .firstBr {
+        display: none;
+    }
+
+    .secondBr {
+        display: none;
+    }
+}
+
+@media all and (min-width:992px) and (max-width:1199px) {
+    #headerSmall {
+        display: none;
+    }
+
+    #headerBig {
+        width: 100%;
+        height: 44px;
+        background-color: rgba(22, 22, 23, 0.8);
+        display: flex;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+    }
+
+    .headerULContainer {
+        height: 44px;
+    }
+
+    .headerUl {
+        list-style-type: none;
+        height: 44px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .headerLi {
+        margin: 0px 1.05vw;
+    }
+
+    .headerLink {
+        display: block;
+        height: 45px;
+        padding: 0 9px;
+        line-height: 45px;
+        text-decoration: none;
+        font-family: SF Pro Regular;
+        color: #c5c5c5;
+        font-size: 13px;
+    }
+
+    .headerIcons {
+        display: block;
+        font-size: 15px;
+        color: #d1d2d0;
+        transition: all 0.32 ease-in-out;
+    }
+
+    .headerLink:hover {
+        color: white;
+        transition-duration: 0.32s;
+    }
+
+    .headerIcons:hover {
+        color: white;
+        transition-duration: 0.32s;
+    }
+
+    .submenuH-Shop {
+        width: 100%;
+        transform: scale(1, 0);
+        background-color: #161617;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        display: flex;
+        justify-content: center;
+        transition: all 500ms ease-in-out;
+        transform-origin: top;
+    }
+
+    .submenuH-ShopScaled {
+        transform: scale(1, 1);
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    .submenuHeaderContainerShop {
+        width: 70%;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerShopScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL1 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleShop1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 25px;
+    }
+
+    .submenu-li-ShopLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 15px;
+    }
+
+    .headerSubmenuUL2 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleShop2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 85px;
+    }
+
+    .submenu-li-ShopLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 75px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL3 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleShop3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 50px;
+    }
+
+    .submenu-li-ShopLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 40px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerMac {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerMacScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL4 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleMac1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 25px;
+    }
+
+    .submenu-li-MacLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 15px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL5 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleMac2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 105px;
+    }
+
+    .submenu-li-MacLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 95px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL6 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleMac3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 25px;
+    }
+
+    .submenu-li-MacLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 15px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerIpad {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerIpadScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL7 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleIpad1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 25px;
+    }
+
+    .submenu-li-IpadLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 15px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL8 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleIpad2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-IpadLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL9 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleIpad3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }
+
+    .submenu-li-IpadLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 30px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerIphone {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerIphoneScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL10 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleIphone1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 25px;
+    }
+
+    .submenu-li-IphoneLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 15px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL11 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleIphone2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 95px;
+    }
+
+    .submenu-li-IphoneLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 85px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL12 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleIphone3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }
+
+    .submenu-li-IphoneLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 30px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerWatch {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerWatchScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL13 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleWatch1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 25px;
+    }
+
+    .submenu-li-WatchLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 15px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL14 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleWatch2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-WatchLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL15 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleWatch3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }
+
+    .submenu-li-WatchLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 30px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerAirpods {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerAirpodsScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL16 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleAirpods1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 25px;
+    }
+
+    .submenu-li-AirpodsLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 15px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL17 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleAirpods2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-AirpodsLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL18 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleAirpods3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }
+
+    .submenu-li-AirpodsLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 30px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerTv {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerTvScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL19 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleTv1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 25px;
+    }
+
+    .submenu-li-TvLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 15px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL20 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleTv2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-TvLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL21 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleTv3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }
+
+    .submenu-li-TvLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 30px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerEntertainment {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerEntertainmentScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL22 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleEntertainment1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 25px;
+    }
+
+    .submenu-li-EntertainmentLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 15px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL23 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleEntertainment2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-EntertainmentLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerAccessories {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerAccessoriesScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL24 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleAccessories1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 25px;
+    }
+
+    .submenu-li-AccessoriesLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 15px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL25 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleAccessories2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-AccessoriesLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerSupport {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerSupportScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL26 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleSupport1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 25px;
+    }
+
+    .submenu-li-SupportLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 15px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL27 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleSupport2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-SupportLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL28 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleSupport3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }
+
+    .submenu-li-SupportLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 30px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerSearch {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerSearchScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .searchDiv {
+        width: 100%;
+        height: 150px;
+    }
+
+    .searchSM {
+        color: #747478;
+        margin-top: 80px;
+        margin-left: 24px;
+        line-height: 40px;
+        padding: 0 10px 0 0;
+    }
+
+    .searchBox {
+        width: 90%;
+        height: 40px;
+        margin-top: 80px;
+        color: white;
+        font-size: 24px;
+        font-family: Sf Pro Bold;
+        background-color: #161617;
+    }
+
+    .arrowRight {
+        font-size: 12px;
+        color: #747478;
+        padding: 0 10px 0 0;
+    }
+
+    .headerSubmenuUL29 {
+        list-style-type: none;
+        padding: 5px 0 80px;
+        width: 100%;
+    }
+
+    .submenu-li-titleSearch2 {
+        font-family: Sf Pro Regular;
+        width: 100%;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 10px;
+        margin-left: 25px;
+    }
+
+    .submenu-li-SearchLink2 {
+        color: #e8e8ed;
+        width: 100%;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 20px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+
+    .submenu-li-SearchLink2:hover {
+        background-color: #202020;
+    }
+
+    .submenu-li-SearchLink2:hover .arrowRight {
+        color: #ffffff;
+    }
+
+    .submenuHeaderContainerBag {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerBagScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .BagDiv {
+        width: 100%;
+        margin-top: 85px;
+    }
+
+    .bagSpan {
+        font-size: 24px;
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        margin-left: 23px;
+    }
+
+    .bagLink {
+        margin-left: 25px;
+        font-family: Sf Pro Regular;
+        font-size: 13px;
+        color: rgb(56, 159, 255);
+    }
+
+    .savedItems {
+        font-family: Sf Pro Regular;
+        font-size: 13px;
+        color: #747478;
+        line-height: 60px;
+    }
+
+    .headerSubmenuUL30 {
+        list-style-type: none;
+        padding: 5px 0 80px;
+        width: 100%;
+    }
+
+    .submenu-li-titleBag2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+        margin-left: 25px;
+    }
+
+    .submenu-li-BagLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 16px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+
+    .Db {
+        display: inline-block;
+        padding: 5px 10px;
+    }
+
+    .shopIphoneTextBox {
+        position: relative;
+        width: 100%;
+        height: 44.59px;
+        background-color: #f5f5f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .shopIphoneText {
+        font-family: Sf Pro Regular;
+        font-size: 14px;
+        font-weight: lighter;
+        text-align: center;
+        color: #4a4a4a;
+    }
+
+    .shopIphoneTextContainer {
+        position: relative;
+        white-space: wrap;
+    }
+
+    .shopIphoneLink {
+        font-family: Sf Pro Regular;
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: lighter;
+        color: #3283d5;
+        padding-left: 5px;
+    }
+
+    .shopIphoneLink:hover {
+        text-decoration: underline;
+    }
+
+    .chR {
+        font-size: 10px;
+    }
+
+    .shopIphoneTextLittle {
+        font-size: 9px;
+        position: absolute;
+        right: 90.5px;
+    }
+
+    .firstBr {
+        display: none;
+    }
+
+    .secondBr {
+        display: none;
+    }
+}
+
+@media all and (min-width:1200px) and (max-width:1399px) {
+    #headerSmall {
+        display: none;
+    }
+
+    #headerBig {
+        width: 100%;
+        height: 44px;
+        background-color: rgba(22, 22, 23, 0.8);
+        display: flex;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+    }
+
+    .headerULContainer {
+        height: 44px;
+    }
+
+    .headerUl {
+        list-style-type: none;
+        height: 44px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .headerLi {
+        margin: 0px 12px;
+    }
+
+    .headerLink {
+        display: block;
+        height: 45px;
+        padding: 0 9px;
+        line-height: 45px;
+        text-decoration: none;
+        font-family: SF Pro Regular;
+        color: #c5c5c5;
+        font-size: 13px;
+    }
+
+    .headerIcons {
+        display: block;
+        font-size: 15px;
+        color: #d1d2d0;
+    }
+
+    .headerLink:hover {
+        color: white;
+        transition-duration: 0.32s;
+    }
+
+    .headerIcons:hover {
+        color: white;
+        transition-duration: 0.32s;
+    }
+
+    .submenuH-Shop {
+        width: 100%;
+        transform: scale(1, 0);
+        background-color: #161617;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        display: flex;
+        justify-content: center;
+        transition: all 500ms ease-in-out;
+        transform-origin: top;
+    }
+
+    .submenuH-ShopScaled {
+        transform: scale(1, 1);
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    .submenuHeaderContainerShop {
+        width: 70%;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerShopScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL1 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleShop1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-ShopLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .headerSubmenuUL2 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleShop2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 85px;
+    }
+
+    .submenu-li-ShopLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 75px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL3 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleShop3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 50px;
+    }
+
+    .submenu-li-ShopLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 40px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerMac {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerMacScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL4 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleMac1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-MacLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL5 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleMac2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 105px;
+    }
+
+    .submenu-li-MacLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 95px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL6 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleMac3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-MacLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 15px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerIpad {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerIpadScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL7 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleIpad1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-IpadLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL8 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleIpad2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-IpadLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL9 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleIpad3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }
+
+    .submenu-li-IpadLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 30px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerIphone {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerIphoneScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL10 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleIphone1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-IphoneLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL11 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleIphone2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 95px;
+    }
+
+    .submenu-li-IphoneLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 85px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL12 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleIphone3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }
+
+    .submenu-li-IphoneLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 30px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerWatch {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerWatchScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL13 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleWatch1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-WatchLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL14 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleWatch2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-WatchLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL15 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleWatch3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }
+
+    .submenu-li-WatchLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 30px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerAirpods {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerAirpodsScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL16 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleAirpods1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-AirpodsLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL17 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleAirpods2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-AirpodsLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL18 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleAirpods3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }
+
+    .submenu-li-AirpodsLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 30px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerTv {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerTvScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL19 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleTv1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-TvLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL20 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleTv2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-TvLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL21 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleTv3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }
+
+    .submenu-li-TvLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 30px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerEntertainment {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerEntertainmentScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL22 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleEntertainment1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-EntertainmentLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL23 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleEntertainment2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-EntertainmentLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerAccessories {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerAccessoriesScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL24 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleAccessories1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-AccessoriesLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL25 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleAccessories2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-AccessoriesLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerSupport {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerSupportScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL26 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleSupport1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-SupportLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL27 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleSupport2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-SupportLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL28 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleSupport3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }
+
+    .submenu-li-SupportLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 30px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerSearch {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerSearchScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .searchDiv {
+        width: 100%;
+        height: 150px;
+    }
+
+    .searchSM {
+        color: #747478;
+        margin-top: 80px;
+        margin-left: 24px;
+        line-height: 40px;
+        padding: 0 10px 0 0px;
+    }
+
+    .searchBox {
+        width: 90%;
+        height: 40px;
+        margin-top: 80px;
+        color: white;
+        font-size: 24px;
+        font-family: Sf Pro Bold;
+        background-color: #161617;
+    }
+
+    .arrowRight {
+        font-size: 12px;
+        color: #747478;
+        padding: 0 10px 0 0;
+    }
+
+    .headerSubmenuUL29 {
+        list-style-type: none;
+        padding: 5px 0 80px;
+        width: 100%;
+    }
+
+    .submenu-li-titleSearch2 {
+        font-family: Sf Pro Regular;
+        width: 100%;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 10px;
+        margin-left: 25px;
+    }
+
+    .submenu-li-SearchLink2 {
+        color: #e8e8ed;
+        width: 100%;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 20px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+
+    .submenu-li-SearchLink2:hover {
+        background-color: #202020;
+    }
+
+    .submenu-li-SearchLink2:hover .arrowRight {
+        color: #ffffff;
+    }
+
+    .submenuHeaderContainerBag {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerBagScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .BagDiv {
+        width: 100%;
+        margin-top: 85px;
+    }
+
+    .bagSpan {
+        font-size: 24px;
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        margin-left: 21px;
+    }
+
+    .bagLink {
+        margin-left: 23px;
+        font-family: Sf Pro Regular;
+        font-size: 13px;
+        color: rgb(56, 159, 255);
+    }
+
+    .savedItems {
+        font-family: Sf Pro Regular;
+        font-size: 13px;
+        color: #747478;
+        line-height: 60px;
+    }
+
+    .headerSubmenuUL30 {
+        list-style-type: none;
+        padding: 5px 0 80px;
+        width: 100%;
+    }
+
+    .submenu-li-titleBag2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+        margin-left: 25px;
+    }
+
+    .submenu-li-BagLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 15px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+
+    .headerLi0:hover .headerLink0 {
+        color: white;
+    }
+
+    .Db {
+        display: inline-block;
+        padding: 5px 10px;
+    }
+
+    .shopIphoneTextBox {
+        position: relative;
+        width: 100%;
+        height: 44.59px;
+        background-color: #f5f5f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .shopIphoneText {
+        font-family: Sf Pro Regular;
+        font-size: 14px;
+        font-weight: lighter;
+        text-align: center;
+        color: #4a4a4a;
+    }
+
+    .shopIphoneTextContainer {
+        position: relative;
+        white-space: wrap;
+    }
+
+    .shopIphoneLink {
+        font-family: Sf Pro Regular;
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: lighter;
+        color: #3283d5;
+        padding-left: 5px;
+    }
+
+    .shopIphoneLink:hover {
+        text-decoration: underline;
+    }
+
+    .chR {
+        font-size: 10px;
+    }
+
+    .shopIphoneTextLittle {
+        font-size: 9px;
+        position: absolute;
+        right: 90.5px;
+    }
+
+    .firstBr {
+        display: none;
+    }
+
+    .secondBr {
+        display: none;
+    }
+}
+
+@media all and (min-width:1400px) {
+    #headerSmall {
+        display: none;
+    }
+
+    #headerBig {
+        width: 100%;
+        height: 44px;
+        background-color: rgba(22, 22, 23, 0.8);
+        display: flex;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+    }
+
+    .headerULContainer {
+        height: 44px;
+    }
+
+    .headerUl {
+        list-style-type: none;
+        height: 44px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .headerLi {
+        margin: 0px 12px;
+    }
+
+    .headerLink {
+        display: block;
+        height: 45px;
+        padding: 0 9px;
+        line-height: 45px;
+        text-decoration: none;
+        font-family: SF Pro Regular;
+        color: #c5c5c5;
+        font-size: 13px;
+    }
+
+    .headerIcons {
+        display: block;
+        font-size: 15px;
+        color: #d1d2d0;
+    }
+
+    .headerLink:hover {
+        color: white;
+        transition-duration: 0.32s;
+    }
+
+    .headerIcons:hover {
+        color: white;
+        transition-duration: 0.32s;
+    }
+
+    .submenuH-Shop {
+        width: 100%;
+        transform: scale(1, 0);
+        background-color: #161617;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        display: flex;
+        justify-content: center;
+        transition: all 500ms ease-in-out;
+        transform-origin: top;
+    }
+
+    .submenuH-ShopScaled {
+        transform: scale(1, 1);
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    .submenuHeaderContainerShop {
+        width: 70%;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerShopScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL1 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleShop1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-ShopLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: inline-block;
+        height: 35px;
+        margin-left: 10px;
+    }
+
+    .headerSubmenuUL2 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleShop2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 85px;
+    }
+
+    .submenu-li-ShopLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: inline-block;
+        padding: 5px;
+        margin-left: 75px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL3 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleShop3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 50px;
+    }
+
+    .submenu-li-ShopLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: inline-block;
+        padding: 5px;
+        margin-left: 40px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerMac {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.5);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerMacScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL4 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleMac1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-MacLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL5 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleMac2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 100px;
+    }
+
+    .submenu-li-MacLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 90px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL6 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleMac3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-MacLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 10px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerIpad {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerIpadScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL7 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleIpad1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-IpadLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL8 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleIpad2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-IpadLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL9 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleIpad3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }
+
+    .submenu-li-IpadLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 30px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerIphone {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerIphoneScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL10 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleIphone1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-IphoneLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL11 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleIphone2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 95px;
+    }
+
+    .submenu-li-IphoneLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 85px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL12 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleIphone3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }
+
+    .submenu-li-IphoneLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 30px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerWatch {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerWatchScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL13 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleWatch1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-WatchLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL14 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleWatch2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-WatchLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL15 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleWatch3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }
+
+    .submenu-li-WatchLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 30px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerAirpods {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerAirpodsScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL16 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleAirpods1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-AirpodsLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL17 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleAirpods2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-AirpodsLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL18 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleAirpods3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }
+
+    .submenu-li-AirpodsLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 30px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerTv {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerTvScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL19 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleTv1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-TvLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL20 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleTv2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-TvLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL21 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleTv3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }
+
+    .submenu-li-TvLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 30px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerEntertainment {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerEntertainmentScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL22 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleEntertainment1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-EntertainmentLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL23 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleEntertainment2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-EntertainmentLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerAccessories {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerAccessoriesScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL24 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleAccessories1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-AccessoriesLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL25 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleAccessories2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-AccessoriesLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerSupport {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerSupportScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .headerSubmenuUL26 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleSupport1 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-SupportLink1 {
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        text-decoration: none;
+        font-size: 24px;
+        display: block;
+        padding: 5px 0;
+        margin-left: 10px;
+    }
+
+    .littleFont {
+        font-size: 12px;
+    }
+
+    .littleFont1 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .headerSubmenuUL27 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleSupport2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 90px;
+    }
+
+    .submenu-li-SupportLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 80px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .headerSubmenuUL28 {
+        list-style-type: none;
+        padding: 85px 0;
+    }
+
+    .submenu-li-titleSupport3 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }
+
+    .submenu-li-SupportLink3 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 30px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+    }
+
+    .submenuHeaderContainerSearch {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerSearchScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .searchDiv {
+        width: 100%;
+        height: 150px;
+    }
+
+    .searchSM {
+        color: #747478;
+        margin-top: 80px;
+        margin-left: 24px;
+        line-height: 40px;
+        padding: 0 10px 0 0;
+    }
+
+    .searchBox {
+        width: 90%;
+        height: 40px;
+        margin-top: 80px;
+        color: white;
+        font-size: 24px;
+        font-family: Sf Pro Bold;
+        background-color: #161617;
+    }
+
+    .arrowRight {
+        font-size: 12px;
+        color: #747478;
+        padding: 0 10px 0 0;
+    }
+
+    .headerSubmenuUL29 {
+        list-style-type: none;
+        padding: 5px 0 80px;
+        width: 100%;
+    }
+
+    .submenu-li-titleSearch2 {
+        font-family: Sf Pro Regular;
+        width: 100%;
+        color: #747478;
+        font-size: 12px;
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+
+    .submenu-li-SearchLink2 {
+        color: #e8e8ed;
+        width: 100%;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 20px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+
+    .submenu-li-SearchLink2:hover {
+        background-color: #202020;
+    }
+
+    .submenu-li-SearchLink2:hover .arrowRight {
+        color: #ffffff;
+    }
+
+    .submenuHeaderContainerBag {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(1, 0.8);
+        transform-origin: top;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+    }
+
+    .submenuHeaderContainerBagScaled {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .BagDiv {
+        width: 100%;
+        margin-top: 85px;
+    }
+
+    .bagSpan {
+        font-size: 24px;
+        font-family: Sf Pro Bold;
+        color: #e8e8ed;
+        margin-left: 22px;
+    }
+
+    .bagLink {
+        margin-left: 26px;
+        font-family: Sf Pro Regular;
+        font-size: 13px;
+        color: rgb(56, 159, 255);
+    }
+
+    .savedItems {
+        font-family: Sf Pro Regular;
+        font-size: 13px;
+        color: #747478;
+        line-height: 60px;
+    }
+
+    .headerSubmenuUL30 {
+        list-style-type: none;
+        padding: 5px 0 80px;
+        width: 100%;
+    }
+
+    .submenu-li-titleBag2 {
+        font-family: Sf Pro Regular;
+        color: #747478;
+        font-size: 12px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+        margin-left: 26px;
+    }
+
+    .submenu-li-BagLink2 {
+        color: #e8e8ed;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        margin-left: 16px;
+        font-family: Sf Pro Bold;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+
+    .Db {
+        display: inline-block;
+        padding: 5px 10px;
+    }
+
+    .shopIphoneTextBox {
+        position: relative;
+        width: 100%;
+        height: 44.59px;
+        background-color: #f5f5f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .shopIphoneText {
+        font-family: Sf Pro Regular;
+        font-size: 14px;
+        font-weight: lighter;
+        text-align: center;
+        color: #4a4a4a;
+    }
+
+    .shopIphoneTextContainer {
+        position: relative;
+        white-space: wrap;
+    }
+
+    .shopIphoneLink {
+        font-family: Sf Pro Regular;
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: lighter;
+        color: #3283d5;
+        padding-left: 5px;
+    }
+
+    .shopIphoneLink:hover {
+        text-decoration: underline;
+    }
+
+    .chR {
+        font-size: 10px;
+    }
+
+    .shopIphoneTextLittle {
+        font-size: 9px;
+        position: absolute;
+        right: 90.5px;
+    }
+
+    .firstBr {
+        display: none;
+    }
+
+    .secondBr {
+        display: none;
+    }
+}
