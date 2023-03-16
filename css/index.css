@@ -733,6 +733,85 @@
         display: none;
     }
 
+    .TVImg {
+        background-image: url("../images/image0Xsm.jpg");
+        width: 100%;
+        height: 500px;
+        background-position-x: center;
+        background-position-y: bottom;
+        background-attachment: scroll;
+        background-clip: border-box;
+        background-origin: padding-box;
+        background-repeat: repeat;
+        background-size: auto;
+        position: relative;
+        margin-bottom: 12px;
+    }
+
+    .TVTextContainer {
+        width: 100%;
+        height: 227.650px;
+        position: absolute;
+        bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .i14TvImgLink2 {
+        display: block;
+        width: 100%;
+        height: 227.650px;
+        position: absolute;
+        z-index: 11;
+        top: 0;
+    }
+
+    .TVLogo1 {
+        width: 70px;
+        margin-bottom: 10px;
+    }
+
+    .TVLogo2 {
+        width: 200px;
+        margin-bottom: 12px;
+    }
+
+    .TVLogo3 {
+        width: 100px;
+        margin-bottom: 20px;
+    }
+
+    .TVPlusLinkContainer {
+        width:116.48px;
+        height: 34.4px;
+        background-color: white;
+        border-radius: 980px;
+        position: static;
+        z-index: 11;
+        cursor: pointer;
+    }
+
+    .TVPlusLinkContainer:hover {
+        background-color: #e6eaee;
+    }
+
+    .span0 {
+        line-height: 34.4px;
+        font-family: Sf Pro Medium;
+        color: #202020;
+        font-size: 13px;
+        margin-right: 3px;
+    }
+
+    .span0-1 {
+        line-height: 34.4px;
+        font-family: Sf Pro Medium;
+        color: #202020;
+        font-size: 13px;
+        margin-right: 5px;
+    }
+
     .Iphone14Img {
         background-image: url("../images/image1Sm.jpg");
         width: 100%;
@@ -1510,7 +1589,186 @@
         width: 100%;
         height: 1px;
         background-color: #d4d4d9;
-        margin: 30px 0;
+        margin: 30px 0 0 0;
+    }
+
+    .bigFooter {
+        display: none;
+    }
+
+    .smallFooter {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .smFooterUlAcr {
+        width: 100%;
+        border-bottom: 1px solid #d4d4d9;
+        cursor: pointer;
+    }
+
+    .titlePlus {
+        width: 100%;
+        height: 36.66px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .smFooterUlTitle {
+        font-family: Sf Pro Medium;
+        color: #5a5a5a;
+        font-size: 13px;
+        line-height: 36.66px;
+    }
+
+    .plusContainer {
+        width: 15px;
+        height: 36.66px;
+        position: relative;
+    }
+
+    .horizontalLine {
+        width: 9px;
+        height: 1px;
+        background-color: #5a5a5a;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.2s ease-in-out;
+        transform-origin: top right;
+    }
+
+    .horizontalLineRotate {
+        transform: rotate(45deg) translate(-1.3px, 5.95px);
+
+    }
+
+    .verticalLine {
+        width: 1px;
+        height: 9px;
+        background-color: #5a5a5a;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.2s ease-in-out;
+        transform-origin: top;
+    }
+
+    .verticalLineRotate {
+        transform: rotate(45deg) translateY(-4px);
+    }
+
+    .acrUl {
+        width: 100%;
+        height: 0px;
+        transition: all 0.32s linear;
+        overflow: hidden;
+    }
+
+    .acrUlClick {
+        width: 100%;
+        height: auto;
+    }
+
+    .acrUL {
+        list-style-type: none;
+        margin: 10px 0 20px 15px;
+        transform: scale(1, 0) translateY(-200px);
+        transition: all 0.4s ease 0s;
+        transform-origin: top;
+    }
+
+    .acrULScale {
+        transform: scale(1, 1);
+    }
+
+    .footerUlAcr {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .footerUl {
+        list-style-type: none;
+        margin-top: 25px;
+    }
+
+    .footerUlTitle {
+        font-family: Sf Pro Medium;
+        color: #1d1d1f;
+        margin-bottom: 10px;
+        font-size: 13px;
+    }
+
+    .footerLi {
+        margin-bottom: 10px;
+    }
+
+    .footerLiA {
+        font-family: Sf Pro Regular;
+        color: #727275;
+        font-size: 13px;
+        text-decoration: none;
+    }
+
+    .footerLiA:hover {
+        text-decoration: underline;
+    }
+
+    .footerUlMargin {
+        margin-left: 6.9vw;
+    }
+
+    .moreWays {
+        margin-top: 25px;
+    }
+
+    .moreWaysA {
+        color: #0080ff;
+        width: 100%;
+    }
+
+    .moreWaysA:visited {
+        color: #0080ff
+    }
+
+    .CountryCopyright {
+        margin-top: 20px;
+    }
+
+    .c1 {
+        color: #5a5a5a;
+    }
+
+    .lastLinks {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .lastA {
+        color: #5a5a5a;
+        margin-left: 10px;
+        padding-right: 10px;
+        text-decoration: none;
+        border-right: 1px solid #5a5a5a;
+    }
+
+    .lastA1 {
+        margin-left: 0;
+    }
+
+    .lastA5 {
+        border-right: 0px;
+    }
+
+    .lastA:hover {
+        text-decoration: underline;
+    }
+
+    .lastA:visited {
+        color: #5a5a5a;
     }
 }
 
@@ -2214,6 +2472,84 @@
     .firstBr {
         display: none;
     }
+ 
+    .TVImg {
+        background-image: url("../images/image0Xsm.jpg");
+        width: 100%;
+        height: 500px;
+        background-position-x: center;
+        background-position-y: bottom;
+        background-attachment: scroll;
+        background-clip: border-box;
+        background-origin: padding-box;
+        background-repeat:no-repeat;
+        background-size: auto;
+        position: relative;
+        margin-bottom: 12px;
+    }
+
+    .TVTextContainer {
+        width: 100%;
+        height: 227.650px;
+        position: absolute;
+        bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .i14TvImgLink2 {
+        display: block;
+        width: 100%;
+        height: 227.650px;
+        position: absolute;
+        z-index: 11;
+    }
+
+    .TVLogo1 {
+        width: 70px;
+        margin-bottom: 10px;
+    }
+
+    .TVLogo2 {
+        width: 200px;
+        margin-bottom: 12px;
+    }
+
+    .TVLogo3 {
+        width: 100px;
+        margin-bottom: 20px;
+    }
+
+    .TVPlusLinkContainer {
+        width:116.48px;
+        height: 34.4px;
+        background-color: white;
+        border-radius: 980px;
+        position: static;
+        z-index: 11;
+        cursor: pointer;
+    }
+
+    .TVPlusLinkContainer:hover {
+        background-color: #e6eaee;
+    }
+
+    .span0 {
+        line-height: 34.4px;
+        font-family: Sf Pro Medium;
+        color: #202020;
+        font-size: 13px;
+        margin-right: 3px;
+    }
+
+    .span0-1 {
+        line-height: 34.4px;
+        font-family: Sf Pro Medium;
+        color: #202020;
+        font-size: 13px;
+        margin-right: 5px;
+    }
 
     .Iphone14Img {
         background-image: url("../images/image1Sm.jpg");
@@ -2369,7 +2705,7 @@
         background-attachment: scroll;
         background-clip: border-box;
         background-origin: padding-box;
-        background-repeat: repeat;
+        background-repeat: no-repeat;
         background-size: auto;
         position: relative;
         margin-top: 15px;
@@ -2935,7 +3271,186 @@
         width: 100%;
         height: 1px;
         background-color: #d4d4d9;
-        margin: 30px 0;
+        margin: 30px 0 0 0;
+    }
+
+    .bigFooter {
+        display: none;
+    }
+
+    .smallFooter {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .smFooterUlAcr {
+        width: 100%;
+        border-bottom: 1px solid #d4d4d9;
+        cursor: pointer;
+    }
+
+    .titlePlus {
+        width: 100%;
+        height: 36.66px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .smFooterUlTitle {
+        font-family: Sf Pro Medium;
+        color: #5a5a5a;
+        font-size: 13px;
+        line-height: 36.66px;
+    }
+
+    .plusContainer {
+        width: 15px;
+        height: 36.66px;
+        position: relative;
+    }
+
+    .horizontalLine {
+        width: 9px;
+        height: 1px;
+        background-color: #5a5a5a;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.2s ease-in-out;
+        transform-origin: top right;
+    }
+
+    .horizontalLineRotate {
+        transform: rotate(45deg) translate(-1.3px, 5.95px);
+
+    }
+
+    .verticalLine {
+        width: 1px;
+        height: 9px;
+        background-color: #5a5a5a;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.2s ease-in-out;
+        transform-origin: top;
+    }
+
+    .verticalLineRotate {
+        transform: rotate(45deg) translateY(-4px);
+    }
+
+    .acrUl {
+        width: 100%;
+        height: 0px;
+        transition: all 0.32s linear;
+        overflow: hidden;
+    }
+
+    .acrUlClick {
+        width: 100%;
+        height: auto;
+    }
+
+    .acrUL {
+        list-style-type: none;
+        margin: 10px 0 20px 15px;
+        transform: scale(1, 0) translateY(-200px);
+        transition: all 0.4s ease 0s;
+        transform-origin: top;
+    }
+
+    .acrULScale {
+        transform: scale(1, 1);
+    }
+
+    .footerUlAcr {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .footerUl {
+        list-style-type: none;
+        margin-top: 25px;
+    }
+
+    .footerUlTitle {
+        font-family: Sf Pro Medium;
+        color: #1d1d1f;
+        margin-bottom: 10px;
+        font-size: 13px;
+    }
+
+    .footerLi {
+        margin-bottom: 10px;
+    }
+
+    .footerLiA {
+        font-family: Sf Pro Regular;
+        color: #727275;
+        font-size: 13px;
+        text-decoration: none;
+    }
+
+    .footerLiA:hover {
+        text-decoration: underline;
+    }
+
+    .footerUlMargin {
+        margin-left: 6.9vw;
+    }
+
+    .moreWays {
+        margin-top: 25px;
+    }
+
+    .moreWaysA {
+        color: #0080ff;
+        width: 100%;
+    }
+
+    .moreWaysA:visited {
+        color: #0080ff
+    }
+
+    .CountryCopyright {
+        margin-top: 20px;
+    }
+
+    .c1 {
+        color: #5a5a5a;
+    }
+
+    .lastLinks {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .lastA {
+        color: #5a5a5a;
+        margin-left: 10px;
+        padding-right: 10px;
+        text-decoration: none;
+        border-right: 1px solid #5a5a5a;
+    }
+
+    .lastA1 {
+        margin-left: 0;
+    }
+
+    .lastA5 {
+        border-right: 0px;
+    }
+
+    .lastA:hover {
+        text-decoration: underline;
+    }
+
+    .lastA:visited {
+        color: #5a5a5a;
     }
 }
 
@@ -3641,6 +4156,84 @@
 
     .secondBr {
         display: none;
+    }
+
+    .TVImg {
+        background-image: url("../images/image0Sm.jpg");
+        width: 100%;
+        height: 569px;
+        background-position-x: center;
+        background-position-y: bottom;
+        background-attachment: scroll;
+        background-clip: border-box;
+        background-origin: padding-box;
+        background-repeat: repeat;
+        background-size: auto;
+        position: relative;
+        margin-bottom: 12px;
+    }
+
+    .TVTextContainer {
+        width: 100%;
+        height: 255.650px;
+        position: absolute;
+        bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .i14TvImgLink2 {
+        display: block;
+        width: 100%;
+        height: 255.650px;
+        position: absolute;
+        z-index: 11;
+    }
+
+    .TVLogo1 {
+        width: 100px;
+        margin-bottom: 10px;
+    }
+
+    .TVLogo2 {
+        width: 230px;
+        margin-bottom: 12px;
+    }
+
+    .TVLogo3 {
+        width: 110px;
+        margin-bottom: 20px;
+    }
+
+    .TVPlusLinkContainer {
+        width:156.25px;
+        height: 44px;
+        background-color: white;
+        border-radius: 980px;
+        position: static;
+        z-index: 11;
+        cursor: pointer;
+    }
+
+    .TVPlusLinkContainer:hover {
+        background-color: #e6eaee;
+    }
+
+    .span0 {
+        line-height: 44px;
+        font-family: Sf Pro Medium;
+        color: #202020;
+        font-size: 18px;
+        margin-right: 4px;
+    }
+
+    .span0-1 {
+        line-height: 44px;
+        font-family: Sf Pro Medium;
+        color: #202020;
+        font-size: 17px;
+        margin-right: 5px;
     }
 
     .Iphone14Img {
@@ -4357,7 +4950,186 @@
         width: 100%;
         height: 1px;
         background-color: #d4d4d9;
-        margin: 30px 0;
+        margin: 30px 0 0 0;
+    }
+
+    .bigFooter {
+        display: none;
+    }
+
+    .smallFooter {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .smFooterUlAcr {
+        width: 100%;
+        border-bottom: 1px solid #d4d4d9;
+        cursor: pointer;
+    }
+
+    .titlePlus {
+        width: 100%;
+        height: 36.66px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .smFooterUlTitle {
+        font-family: Sf Pro Medium;
+        color: #5a5a5a;
+        font-size: 13px;
+        line-height: 36.66px;
+    }
+
+    .plusContainer {
+        width: 15px;
+        height: 36.66px;
+        position: relative;
+    }
+
+    .horizontalLine {
+        width: 9px;
+        height: 1px;
+        background-color: #5a5a5a;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.2s ease-in-out;
+        transform-origin: top right;
+    }
+
+    .horizontalLineRotate {
+        transform: rotate(45deg) translate(-1.3px, 5.95px);
+
+    }
+
+    .verticalLine {
+        width: 1px;
+        height: 9px;
+        background-color: #5a5a5a;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.2s ease-in-out;
+        transform-origin: top;
+    }
+
+    .verticalLineRotate {
+        transform: rotate(45deg) translateY(-4px);
+    }
+
+    .acrUl {
+        width: 100%;
+        height: 0px;
+        transition: all 0.32s linear;
+        overflow: hidden;
+    }
+
+    .acrUlClick {
+        width: 100%;
+        height: auto;
+    }
+
+    .acrUL {
+        list-style-type: none;
+        margin: 10px 0 20px 15px;
+        transform: scale(1, 0) translateY(-200px);
+        transition: all 0.4s ease 0s;
+        transform-origin: top;
+    }
+
+    .acrULScale {
+        transform: scale(1, 1);
+    }
+
+    .footerUlAcr {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .footerUl {
+        list-style-type: none;
+        margin-top: 25px;
+    }
+
+    .footerUlTitle {
+        font-family: Sf Pro Medium;
+        color: #1d1d1f;
+        margin-bottom: 10px;
+        font-size: 13px;
+    }
+
+    .footerLi {
+        margin-bottom: 10px;
+    }
+
+    .footerLiA {
+        font-family: Sf Pro Regular;
+        color: #727275;
+        font-size: 13px;
+        text-decoration: none;
+    }
+
+    .footerLiA:hover {
+        text-decoration: underline;
+    }
+
+    .footerUlMargin {
+        margin-left: 6.9vw;
+    }
+
+    .moreWays {
+        margin-top: 25px;
+    }
+
+    .moreWaysA {
+        color: #0080ff;
+        width: 100%;
+    }
+
+    .moreWaysA:visited {
+        color: #0080ff
+    }
+
+    .CountryCopyright {
+        margin-top: 20px;
+    }
+
+    .c1 {
+        color: #5a5a5a;
+    }
+
+    .lastLinks {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .lastA {
+        color: #5a5a5a;
+        margin-left: 10px;
+        padding-right: 10px;
+        text-decoration: none;
+        border-right: 1px solid #5a5a5a;
+    }
+
+    .lastA1 {
+        margin-left: 0;
+    }
+
+    .lastA5 {
+        border-right: 0px;
+    }
+
+    .lastA:hover {
+        text-decoration: underline;
+    }
+
+    .lastA:visited {
+        color: #5a5a5a;
     }
 }
 
@@ -5524,6 +6296,84 @@
         display: none;
     }
 
+    .TVImg {
+        background-image: url("../images/image0.jpg");
+        width: 100%;
+        height: 569px;
+        background-position-x: center;
+        background-position-y: bottom;
+        background-attachment: scroll;
+        background-clip: border-box;
+        background-origin: padding-box;
+        background-repeat: repeat;
+        background-size: auto;
+        position: relative;
+        margin-bottom: 12px;
+    }
+
+    .TVTextContainer {
+        width: 100%;
+        height: 255.650px;
+        position: absolute;
+        bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .i14TvImgLink2 {
+        display: block;
+        width: 100%;
+        height: 255.650px;
+        position: absolute;
+        z-index: 11;
+    }
+
+    .TVLogo1 {
+        width: 105px;
+        margin-bottom: 10px;
+    }
+
+    .TVLogo2 {
+        width: 270px;
+        margin-bottom: 12px;
+    }
+
+    .TVLogo3 {
+        width: 100px;
+        margin-bottom: 20px;
+    }
+
+    .TVPlusLinkContainer {
+        width:156.25px;
+        height: 44px;
+        background-color: white;
+        border-radius: 980px;
+        position: static;
+        z-index: 11;
+        cursor: pointer;
+    }
+
+    .TVPlusLinkContainer:hover {
+        background-color: #e6eaee;
+    }
+
+    .span0 {
+        line-height: 44px;
+        font-family: Sf Pro Medium;
+        color: #202020;
+        font-size: 18px;
+        margin-right: 4px;
+    }
+
+    .span0-1 {
+        line-height: 44px;
+        font-family: Sf Pro Medium;
+        color: #202020;
+        font-size: 17px;
+        margin-right: 5px;
+    }
+
     .Iphone14Img {
         background-image: url("../images/image1.jpg");
         width: 100%;
@@ -6223,10 +7073,11 @@
         width: 100%;
         background-color: #f5f5f7;
         margin-top: 12px;
+        padding-bottom: 30px;
     }
 
     .footerTextContainer {
-        width: 980px;
+        width: 950px;
         font-family: Sf Pro Regular;
         font-size: 13px;
         color: #79797e;
@@ -6248,7 +7099,118 @@
         width: 100%;
         height: 1px;
         background-color: #d4d4d9;
-        margin: 30px 0;
+        margin: 30px 0 0 0;
+    }
+
+    .bigFooter {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .moreWaysBig {
+        margin-top: 20px;
+    }
+
+    .moreWaysBigA {
+        color: #0080ff
+    }
+
+    .moreWaysBigA:visited {
+        color: #0080ff
+    }
+
+    .footerLine2 {
+        width: 100%;
+        height: 1.2px;
+        background-color: #d4d4d9;
+        margin: 12px 0 15px 0;
+    }
+
+    .footerUl {
+        list-style-type: none;
+        margin-top: 25px;
+    }
+
+    .footerUlTitle {
+        font-family: Sf Pro Medium;
+        color: #1d1d1f;
+        margin-bottom: 10px;
+        font-size: 13px;
+    }
+
+    .footerLi {
+        margin-bottom: 10px;
+    }
+
+    .footerLiA {
+        font-family: Sf Pro Regular;
+        color: #727275;
+        font-size: 13px;
+        text-decoration: none;
+    }
+
+    .footerLiA:hover {
+        text-decoration: underline;
+    }
+
+    .footerUlMargin {
+        margin-left: 6.9vw;
+    }
+
+    .smallFooter {
+        display: none;
+    }
+
+    .smFooterUlAcr {
+        display: none;
+    }
+
+    .acrUl {
+        display: none;
+    }
+
+    .lastFooterText {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .lastLinks {
+        display: none;
+    }
+
+    .c1 {
+        color: #5a5a5a;
+    }
+
+    .lastLinks2 {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .lastA {
+        color: #5a5a5a;
+        margin-left: 10px;
+        padding-right: 10px;
+        text-decoration: none;
+        border-right: 1px solid #5a5a5a;
+    }
+
+    .lastA1 {
+        margin-left: 0;
+    }
+
+    .lastA5 {
+        border-right: 0px;
+    }
+
+    .lastA:hover {
+        text-decoration: underline;
+    }
+
+    .lastA:visited {
+        color: #5a5a5a;
     }
 }
 
@@ -7418,6 +8380,84 @@
         display: none;
     }
 
+    .TVImg {
+        background-image: url("../images/image0.jpg");
+        width: 100%;
+        height: 580px;
+        background-position-x: center;
+        background-position-y: bottom;
+        background-attachment: scroll;
+        background-clip: border-box;
+        background-origin: padding-box;
+        background-repeat: repeat;
+        background-size: auto;
+        position: relative;
+        margin-bottom: 12px;
+    }
+
+    .TVTextContainer {
+        width: 100%;
+        height: 255.650px;
+        position: absolute;
+        bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .i14TvImgLink2 {
+        display: block;
+        width: 100%;
+        height: 255.650px;
+        position: absolute;
+        z-index: 11;
+    }
+
+    .TVLogo1 {
+        width: 120px;
+        margin-bottom: 10px;
+    }
+
+    .TVLogo2 {
+        width: 300px;
+        margin-bottom: 12px;
+    }
+
+    .TVLogo3 {
+        width: 110px;
+        margin-bottom: 20px;
+    }
+
+    .TVPlusLinkContainer {
+        width:156.25px;
+        height: 44px;
+        background-color: white;
+        border-radius: 980px;
+        position: static;
+        z-index: 11;
+        cursor: pointer;
+    }
+
+    .TVPlusLinkContainer:hover {
+        background-color: #e6eaee;
+    }
+
+    .span0 {
+        line-height: 44px;
+        font-family: Sf Pro Medium;
+        color: #202020;
+        font-size: 18px;
+        margin-right: 4px;
+    }
+
+    .span0-1 {
+        line-height: 44px;
+        font-family: Sf Pro Medium;
+        color: #202020;
+        font-size: 17px;
+        margin-right: 5px;
+    }
+
     .Iphone14Img {
         background-image: url("../images/image1.jpg");
         width: 100%;
@@ -8133,7 +9173,106 @@
         width: 100%;
         height: 1px;
         background-color: #d4d4d9;
-        margin: 30px 0;
+        margin: 30px 0 0 0;
+    }
+
+    .bigFooter {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .moreWaysBig {
+        margin-top: 20px;
+    }
+
+    .moreWaysBigA {
+        color: #0080ff
+    }
+
+    .moreWaysBigA:visited {
+        color: #0080ff
+    }
+
+    .footerLine2 {
+        width: 100%;
+        height: 1.2px;
+        background-color: #d4d4d9;
+        margin: 12px 0 15px 0;
+    }
+
+    .smallFooter {
+        display: none;
+    }
+
+    .footerUl {
+        list-style-type: none;
+        margin-top: 25px;
+    }
+
+    .footerUlTitle {
+        font-family: Sf Pro Medium;
+        color: #1d1d1f;
+        margin-bottom: 10px;
+        font-size: 13px;
+    }
+
+    .footerLi {
+        margin-bottom: 10px;
+    }
+
+    .footerLiA {
+        font-family: Sf Pro Regular;
+        color: #727275;
+        font-size: 13px;
+        text-decoration: none;
+    }
+
+    .footerLiA:hover {
+        text-decoration: underline;
+    }
+
+    .footerUlMargin {
+        margin-left: 6.5vw;
+    }
+
+    .lastFooterText {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 25px;
+    }
+
+    .lastLinks2 {
+        display: none;
+    }
+
+    .c1 {
+        color: #5a5a5a;
+    }
+
+    .lastA {
+        color: #5a5a5a;
+        margin-left: 10px;
+        padding-right: 10px;
+        text-decoration: none;
+        border-right: 1px solid #5a5a5a;
+    }
+
+    .lastA1 {
+        margin-left: 0;
+    }
+
+    .lastA5 {
+        border-right: 0px;
+    }
+
+    .lastA:hover {
+        text-decoration: underline;
+    }
+
+    .lastA:visited {
+        color: #5a5a5a;
     }
 }
 
@@ -9299,6 +10438,84 @@
         display: none;
     }
 
+    .TVImg {
+        background-image: url("../images/image0.jpg");
+        width: 100%;
+        height: 580px;
+        background-position-x: center;
+        background-position-y: bottom;
+        background-attachment: scroll;
+        background-clip: border-box;
+        background-origin: padding-box;
+        background-repeat: repeat;
+        background-size: auto;
+        position: relative;
+        margin-bottom: 12px;
+    }
+
+    .TVTextContainer {
+        width: 100%;
+        height: 255.650px;
+        position: absolute;
+        bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .i14TvImgLink2 {
+        display: block;
+        width: 100%;
+        height: 255.650px;
+        position: absolute;
+        z-index: 11;
+    }
+
+    .TVLogo1 {
+        width: 120px;
+        margin-bottom: 10px;
+    }
+
+    .TVLogo2 {
+        width: 300px;
+        margin-bottom: 12px;
+    }
+
+    .TVLogo3 {
+        width: 110px;
+        margin-bottom: 20px;
+    }
+
+    .TVPlusLinkContainer {
+        width:156.25px;
+        height: 44px;
+        background-color: white;
+        border-radius: 980px;
+        position: static;
+        z-index: 11;
+        cursor: pointer;
+    }
+
+    .TVPlusLinkContainer:hover {
+        background-color: #e6eaee;
+    }
+
+    .span0 {
+        line-height: 44px;
+        font-family: Sf Pro Medium;
+        color: #202020;
+        font-size: 18px;
+        margin-right: 4px;
+    }
+
+    .span0-1 {
+        line-height: 44px;
+        font-family: Sf Pro Medium;
+        color: #202020;
+        font-size: 17px;
+        margin-right: 5px;
+    }
+
     .Iphone14Img {
         background-image: url("../images/image1.jpg");
         width: 100%;
@@ -9992,7 +11209,6 @@
 
     .footer {
         width: 100%;
-        height: 1500px;
         background-color: #f5f5f7;
         margin-top: 12px;
     }
@@ -10023,11 +11239,33 @@
         margin: 30px 0 0 0;
     }
 
-    .footerUlAcr {
+    .bigFooter {
         width: 100%;
-        height: 4.400px;
         display: flex;
         flex-direction: row;
+    }
+
+    .moreWaysBig {
+        margin-top: 20px;
+    }
+
+    .moreWaysBigA {
+        color: #0080ff
+    }
+
+    .moreWaysBigA:visited {
+        color: #0080ff
+    }
+
+    .footerLine2 {
+        width: 100%;
+        height: 1.2px;
+        background-color: #d4d4d9;
+        margin: 12px 0 15px 0;
+    }
+
+    .smallFooter {
+        display: none;
     }
 
     .footerUl {
@@ -10061,7 +11299,42 @@
         margin-left: 5.7vw;
     }
 
-    .footerBr {
+    .lastFooterText {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 25px;
+    }
+
+    .lastLinks2 {
         display: none;
+    }
+
+    .c1 {
+        color: #5a5a5a;
+    }
+
+    .lastA {
+        color: #5a5a5a;
+        margin-left: 10px;
+        padding-right: 10px;
+        text-decoration: none;
+        border-right: 1px solid #5a5a5a;
+    }
+
+    .lastA1 {
+        margin-left: 0;
+    }
+
+    .lastA5 {
+        border-right: 0px;
+    }
+
+    .lastA:hover {
+        text-decoration: underline;
+    }
+
+    .lastA:visited {
+        color: #5a5a5a;
     }
 }

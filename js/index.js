@@ -1,4 +1,4 @@
-const body=document.querySelector(".blur");
+const body = document.querySelector(".blur");
 const appleIcon = document.querySelector(".headerLink0");
 const sib = document.querySelector(".headerIcons");
 const Shop = document.querySelector(".headerLink1");
@@ -650,8 +650,85 @@ subSmBag1.addEventListener("click", function () {
     }
 });
 
+const footerAcrTitle = document.querySelectorAll(".smFooterUlAcr");
+const verticalLine = document.querySelectorAll(".verticalLine");
+const horizontalLine = document.querySelectorAll(".horizontalLine");
+const acrUl = document.querySelectorAll(".acrUl");
+const acrUlScale = document.querySelectorAll(".acrUL");
 
+footerAcrTitle[0].addEventListener("click", function () {
+    verticalLine[0].classList.toggle("verticalLineRotate");
+    horizontalLine[0].classList.toggle("horizontalLineRotate");
+    acrUl[0].classList.toggle("acrUlClick");
+    acrUlScale[0].classList.toggle("acrULScale");
+});
 
+footerAcrTitle[1].addEventListener("click", function () {
+    verticalLine[1].classList.toggle("verticalLineRotate");
+    horizontalLine[1].classList.toggle("horizontalLineRotate");
+    acrUl[1].classList.toggle("acrUlClick");
+    acrUlScale[1].classList.toggle("acrULScale");
+});
 
+footerAcrTitle[2].addEventListener("click", function () {
+    verticalLine[2].classList.toggle("verticalLineRotate");
+    horizontalLine[2].classList.toggle("horizontalLineRotate");
+    acrUl[2].classList.toggle("acrUlClick");
+    acrUlScale[2].classList.toggle("acrULScale");
+});
 
+footerAcrTitle[3].addEventListener("click", function () {
+    verticalLine[3].classList.toggle("verticalLineRotate");
+    horizontalLine[3].classList.toggle("horizontalLineRotate");
+    acrUl[3].classList.toggle("acrUlClick");
+    acrUlScale[3].classList.toggle("acrULScale");
+});
 
+footerAcrTitle[4].addEventListener("click", function () {
+    verticalLine[4].classList.toggle("verticalLineRotate");
+    horizontalLine[4].classList.toggle("horizontalLineRotate");
+    acrUl[4].classList.toggle("acrUlClick");
+    acrUlScale[4].classList.toggle("acrULScale");
+});
+
+footerAcrTitle[5].addEventListener("click", function () {
+    verticalLine[5].classList.toggle("verticalLineRotate");
+    horizontalLine[5].classList.toggle("horizontalLineRotate");
+    acrUl[5].classList.toggle("acrUlClick");
+    acrUlScale[5].classList.toggle("acrULScale");
+});
+
+footerAcrTitle[6].addEventListener("click", function () {
+    verticalLine[6].classList.toggle("verticalLineRotate");
+    horizontalLine[6].classList.toggle("horizontalLineRotate");
+    acrUl[6].classList.toggle("acrUlClick");
+    acrUlScale[6].classList.toggle("acrULScale");
+});
+
+footerAcrTitle[7].addEventListener("click", function () {
+    verticalLine[7].classList.toggle("verticalLineRotate");
+    horizontalLine[7].classList.toggle("horizontalLineRotate");
+    acrUl[7].classList.toggle("acrUlClick");
+    acrUlScale[7].classList.toggle("acrULScale");
+});
+
+footerAcrTitle[8].addEventListener("click", function () {
+    verticalLine[8].classList.toggle("verticalLineRotate");
+    horizontalLine[8].classList.toggle("horizontalLineRotate");
+    acrUl[8].classList.toggle("acrUlClick");
+    acrUlScale[8].classList.toggle("acrULScale");
+});
+
+footerAcrTitle[9].addEventListener("click", function () {
+    verticalLine[9].classList.toggle("verticalLineRotate");
+    horizontalLine[9].classList.toggle("horizontalLineRotate");
+    acrUl[9].classList.toggle("acrUlClick");
+    acrUlScale[9].classList.toggle("acrULScale");
+});
+
+footerAcrTitle[10].addEventListener("click", function () {
+    verticalLine[10].classList.toggle("verticalLineRotate");
+    horizontalLine[10].classList.toggle("horizontalLineRotate");
+    acrUl[10].classList.toggle("acrUlClick");
+    acrUlScale[10].classList.toggle("acrULScale");
+});
