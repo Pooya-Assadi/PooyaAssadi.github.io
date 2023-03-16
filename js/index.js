@@ -1,3 +1,4 @@
+const body=document.querySelector(".blur");
 const appleIcon = document.querySelector(".headerLink0");
 const sib = document.querySelector(".headerIcons");
 const Shop = document.querySelector(".headerLink1");
@@ -29,6 +30,7 @@ const sm12 = document.querySelector(".submenuHeaderContainerBag");
 appleIcon.addEventListener("mouseenter", function () {
     smShop.classList.remove("submenuH-ShopScaled");
     sib.classList.add("headerIconsColor");
+    body.classList.remove("blur1");
 });
 
 Shop.addEventListener("mouseenter", function () {
@@ -46,6 +48,7 @@ Shop.addEventListener("mouseenter", function () {
     sm10.classList.add("hidden");
     sm11.classList.add("hidden");
     sm12.classList.add("hidden");
+    body.classList.add("blur1");
 });
 
 mac.addEventListener("mouseenter", function () {
@@ -63,6 +66,7 @@ mac.addEventListener("mouseenter", function () {
     sm10.classList.add("hidden");
     sm11.classList.add("hidden");
     sm12.classList.add("hidden");
+    body.classList.add("blur1");
 });
 
 
@@ -81,6 +85,7 @@ ipad.addEventListener("mouseenter", function () {
     sm10.classList.add("hidden");
     sm11.classList.add("hidden");
     sm12.classList.add("hidden");
+    body.classList.add("blur1");
 });
 
 iphone.addEventListener("mouseenter", function () {
@@ -98,6 +103,7 @@ iphone.addEventListener("mouseenter", function () {
     sm10.classList.add("hidden");
     sm11.classList.add("hidden");
     sm12.classList.add("hidden");
+    body.classList.add("blur1");
 });
 
 watch.addEventListener("mouseenter", function () {
@@ -115,6 +121,7 @@ watch.addEventListener("mouseenter", function () {
     sm10.classList.add("hidden");
     sm11.classList.add("hidden");
     sm12.classList.add("hidden");
+    body.classList.add("blur1");
 });
 
 airpods.addEventListener("mouseenter", function () {
@@ -132,6 +139,7 @@ airpods.addEventListener("mouseenter", function () {
     sm10.classList.add("hidden");
     sm11.classList.add("hidden");
     sm12.classList.add("hidden");
+    body.classList.add("blur1");
 });
 
 tv.addEventListener("mouseenter", function () {
@@ -149,6 +157,7 @@ tv.addEventListener("mouseenter", function () {
     sm10.classList.add("hidden");
     sm11.classList.add("hidden");
     sm12.classList.add("hidden");
+    body.classList.add("blur1");
 });
 
 entertainment.addEventListener("mouseenter", function () {
@@ -166,6 +175,7 @@ entertainment.addEventListener("mouseenter", function () {
     sm10.classList.add("hidden");
     sm11.classList.add("hidden");
     sm12.classList.add("hidden");
+    body.classList.add("blur1");
 });
 
 accessories.addEventListener("mouseenter", function () {
@@ -183,6 +193,7 @@ accessories.addEventListener("mouseenter", function () {
     sm10.classList.add("hidden");
     sm11.classList.add("hidden");
     sm12.classList.add("hidden");
+    body.classList.add("blur1");
 });
 
 support.addEventListener("mouseenter", function () {
@@ -200,6 +211,7 @@ support.addEventListener("mouseenter", function () {
     sm9.classList.add("hidden");
     sm11.classList.add("hidden");
     sm12.classList.add("hidden");
+    body.classList.add("blur1");
 });
 
 searchIcon.addEventListener("click", function () {
@@ -217,10 +229,12 @@ searchIcon.addEventListener("click", function () {
     sm9.classList.add("hidden");
     sm10.classList.add("hidden");
     sm12.classList.add("hidden");
+    body.classList.toggle("blur1");
 });
 
 searchIcon.addEventListener("mouseenter", function () {
     smShop.classList.remove("submenuH-ShopScaled");
+    body.classList.remove("blur1");
 });
 
 bagIcon.addEventListener("click", function () {
@@ -238,10 +252,12 @@ bagIcon.addEventListener("click", function () {
     sm9.classList.add("hidden");
     sm10.classList.add("hidden");
     sm11.classList.add("hidden");
+    body.classList.toggle("blur1");
 });
 
 bagIcon.addEventListener("mouseenter", function () {
     smShop.classList.remove("submenuH-ShopScaled");
+    body.classList.remove("blur1");
 });
 
 smShop.addEventListener("mouseleave", function () {
@@ -258,6 +274,7 @@ smShop.addEventListener("mouseleave", function () {
     sm10.classList.remove("submenuHeaderContainerSupportScaled");
     sm11.classList.remove("submenuHeaderContainerSearchScaled");
     sm12.classList.remove("submenuHeaderContainerBagScaled");
+    body.classList.remove("blur1");
 })
 
 $(document).ready(function () {
