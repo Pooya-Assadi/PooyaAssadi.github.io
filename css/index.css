@@ -783,7 +783,7 @@
     }
 
     .TVPlusLinkContainer {
-        width:116.48px;
+        width: 116.48px;
         height: 34.4px;
         background-color: white;
         border-radius: 980px;
@@ -1770,6 +1770,10 @@
     .lastA:visited {
         color: #5a5a5a;
     }
+
+    .moreWaysBig {
+        display: none;
+    }
 }
 
 @media all and (min-width:576px) and (max-width:767px) {
@@ -2472,7 +2476,7 @@
     .firstBr {
         display: none;
     }
- 
+
     .TVImg {
         background-image: url("../images/image0Xsm.jpg");
         width: 100%;
@@ -2482,7 +2486,7 @@
         background-attachment: scroll;
         background-clip: border-box;
         background-origin: padding-box;
-        background-repeat:no-repeat;
+        background-repeat: no-repeat;
         background-size: auto;
         position: relative;
         margin-bottom: 12px;
@@ -2522,7 +2526,7 @@
     }
 
     .TVPlusLinkContainer {
-        width:116.48px;
+        width: 116.48px;
         height: 34.4px;
         background-color: white;
         border-radius: 980px;
@@ -3452,6 +3456,10 @@
     .lastA:visited {
         color: #5a5a5a;
     }
+
+    .moreWaysBig {
+        display: none;
+    }
 }
 
 @media all and (min-width:768px) and (max-width:991px) {
@@ -4207,7 +4215,7 @@
     }
 
     .TVPlusLinkContainer {
-        width:156.25px;
+        width: 156.25px;
         height: 44px;
         background-color: white;
         border-radius: 980px;
@@ -5130,6 +5138,10 @@
 
     .lastA:visited {
         color: #5a5a5a;
+    }
+
+    .moreWaysBig {
+        display: none;
     }
 }
 
@@ -6345,7 +6357,7 @@
     }
 
     .TVPlusLinkContainer {
-        width:156.25px;
+        width: 156.25px;
         height: 44px;
         background-color: white;
         border-radius: 980px;
@@ -8429,7 +8441,7 @@
     }
 
     .TVPlusLinkContainer {
-        width:156.25px;
+        width: 156.25px;
         height: 44px;
         background-color: white;
         border-radius: 980px;
@@ -10487,7 +10499,7 @@
     }
 
     .TVPlusLinkContainer {
-        width:156.25px;
+        width: 156.25px;
         height: 44px;
         background-color: white;
         border-radius: 980px;
